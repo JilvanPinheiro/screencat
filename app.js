@@ -1,8 +1,8 @@
 /* global screen */
-var ipc = require('ipc')
-var clipboard = require('clipboard')
-var shell = require('shell')
-var desktopCapturer = require('desktop-capturer')
+var ipc = require('electron').ipcRenderer
+var clipboard = require('electron').clipboard
+var shell = require('electron').shell
+var desktopCapturer = require('electron').desktopCapturer
 
 var domify = require('domify')
 var mdns = require('multicast-dns')()
@@ -58,7 +58,7 @@ peerConnection.on('connected', function connected (newPeer, remote) {
   })
 })
 
-ipc.on('open-url', function (lnk) {
+ipc.on('open-url', function (ev, lnk) {
   console.log('open url', lnk)
 })
 
@@ -98,7 +98,7 @@ ui.buttons.share.addEventListener('click', function (e) {
     ui.show(ui.containers.capturer)
     var id = 0
     sources.forEach(function (source) {
-      var thumb = source.thumbnail.toDataUrl()
+      var thumb = source.thumbnail.toDataURL()
       if (!thumb) return
       var title = source.name.slice(0, 20)
       var item = `<li><a href="#"><img src="${thumb}"><span>${title}</span></a></li>`

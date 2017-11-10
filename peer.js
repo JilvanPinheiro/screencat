@@ -6,10 +6,10 @@ var nets = require('nets')
 var getUserMedia = require('./get-user-media.js')()
 
 module.exports = function create () {
-  var server = 'http://catlobby.maxogden.com'
-  // var server = 'http://localhost:5005'
+  //;var server = 'http://catlobby.maxogden.com'
+  var server = 'http://localhost:5005'
   var remoteConfigUrl = 'https://instant.io/rtcConfig'
-  if (process.browser) remoteConfigUrl = 'http://cors.maxogden.com/' + remoteConfigUrl
+  if (process.browser) remoteConfigUrl = 'https://crossorigin.me/' + remoteConfigUrl
 
   var videoSize
 
@@ -216,7 +216,7 @@ module.exports = function create () {
       peer.on('data', function (data) {
         if (!pc.robot) return
         console.log(data)
-        pc.robot(data)
+        pc.robot(JSON.parse(data))
       })
       return
     }
@@ -230,7 +230,7 @@ module.exports = function create () {
       var data = getMouseData(e)
       data.click = true
       console.log('send mouseup', data)
-      peer.send(data)
+      peer.send(JSON.stringify(data))
     }
 
     function keydownListener (e) {
@@ -245,7 +245,7 @@ module.exports = function create () {
       }
 
       console.log('send key', data)
-      peer.send(data)
+      peer.send(JSON.stringify(data))
     }
 
     function getMouseData (e) {
