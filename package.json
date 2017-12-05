@@ -4,9 +4,11 @@
   "description": "webrtc screensharing with shared mouse and keyboard",
   "main": "electron.js",
   "scripts": {
-    "start": "electron lib/electron.js",
+    "start": "ELECTRON_ENABLE_LOGGING=1 electron lib/electron.js",
+    "build": "electron-packager . ScreenCat --platform=darwin --arch=x64 --version=0.36.0 --protocol-name=\"ScreenCat URL\" --protocol=\"screencat\" --ignore=node_modules/electron-prebuilt --ignore=node_modules/electron-packager --ignore=node_modules/browserify --ignore=node_modules/wzrd --ignore=node_modules/standard",
     "css": "node-sass stylesheets/sass/screencat.scss stylesheets/css/screencat.css --watch",
-    "test": "standard"
+    "test": "standard",
+    "rebuild": "cd node_modules/robotjs && set HOME=~/.electron-gyp && node-gyp rebuild --target=0.36.0 --arch=x64 --dist-url=https://atom.io/download/atom-shell"
   },
   "author": "max ogden",
   "license": "BSD-3-Clause",

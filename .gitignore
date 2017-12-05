@@ -3,4 +3,5 @@ node_modules
 .DS_Store
 ScreenCat.app
 ScreenCat.zip
+ScreenCat-darwin-x64
 .sass-cache
