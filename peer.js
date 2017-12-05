@@ -7,7 +7,7 @@ var getUserMedia = require('./get-user-media.js')()
 
 module.exports = function create () {
   //;var server = 'http://catlobby.maxogden.com'
-  var server = 'http://localhost:5005'
+  var server = 'https://aquamarine-gondola.glitch.me'
   var remoteConfigUrl = 'https://instant.io/rtcConfig'
   if (process.browser) remoteConfigUrl = 'https://crossorigin.me/' + remoteConfigUrl
 
