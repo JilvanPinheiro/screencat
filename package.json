@@ -4,7 +4,7 @@
   "description": "webrtc screensharing with shared mouse and keyboard",
   "main": "electron.js",
   "scripts": {
-    "start": "electron electron.js",
+    "start": "electron lib/electron.js",
     "css": "node-sass stylesheets/sass/screencat.scss stylesheets/css/screencat.css --watch",
     "test": "standard"
   },
