@@ -22,6 +22,7 @@
     "menubar": "^5.2.3",
     "multicast-dns": "^7",
     "nets": "^3.2.0",
+    "node-abi": "^2.7.1",
     "simple-peer": "^9",
     "ssejson": "^1.2.0",
     "vkey": "^1.0.1"
@@ -30,12 +31,12 @@
     "robotjs": "^0.5.1"
   },
   "devDependencies": {
-    "browserify": "^16",
+    "browserify": "^16.2.3",
     "cat-lobby": "git+https://github.com/maxogden/cat-lobby.git",
-    "electron": "^2",
+    "electron": "^4.1.0",
     "electron-packager": "^12",
     "electron-rebuild": "^1.7",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.11.0",
     "standard": "^11",
     "tachyons": "^4",
     "wzrd": "^1.5.0"
